@@ -11,6 +11,9 @@ translate([60,0,0])
 translate([60,0,0])
     sideTeeth(5);
 
+translate([60,0,0])
+    grips();
+
 translate([-60,0,0])
     difference(){
         
@@ -21,8 +24,20 @@ translate([-60,0,0])
 
 translate([-60,0,0])
     sideTeeth(0);
+translate([-60,0,0])
+    grips();
 
 
+
+//grips?
+module grips (){
+    
+    difference(){ 
+        ridge(55, 10); 
+        translate([0,0,10])
+        cylinder (h = 20, r=60, center = false, $fn=100); 
+    }   
+}
 
 module ridge(dia, stepSize){
     for(spot=[0:stepSize:359]){
